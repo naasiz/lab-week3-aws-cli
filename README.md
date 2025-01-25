@@ -17,3 +17,5 @@ https://docs.aws.amazon.com/cli/v1/userguide/cli-services-ec2-instances.html
 #### Resources
 [Nathan's Notes](https://gitlab.com/cit_4640/4640-w3-lab-start-w25)
 
+#### linking the cli to aws account
+https://docs.aws.amazon.com/cli/v1/usierguide/cli-services-iam.html
