@@ -14,7 +14,7 @@ ubuntu_ami=$(aws ec2 describe-images --region $region \
  --query 'sort_by(Images, &CreationDate)[-1].ImageId' --output text)
 
 # Create security group allowing SSH and HTTP from anywhere
-security_group_id=$(aws ec2 create-security-group --group-name MySecurityGroup \
+security_group_id=$(aws ec2 create-security-group --group-name MyGroups \
  --description "Allow SSH and HTTP" --vpc-id $vpc_id --query 'GroupId' \
  --region $region \
  --output text)
@@ -25,9 +25,10 @@ aws ec2 authorize-security-group-ingress --group-id $security_group_id \
 aws ec2 authorize-security-group-ingress --group-id $security_group_id \
  --protocol tcp --port 80 --cidr 0.0.0.0/0 --region $region
 
-# Launch an EC2 instance in the public subnet
+# Launch an EC2 instance in the public subnet with a public IP
 instance_id=$(aws ec2 run-instances --image-id $ubuntu_ami --count 1 --instance-type t2.micro \
  --key-name $key_name --security-group-ids $security_group_id --subnet-id $subnet_id \
+ --associate-public-ip-address \
  --query 'Instances[0].InstanceId' --output text)
 
 # Wait for EC2 instance to be running
