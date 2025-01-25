@@ -1,6 +1,6 @@
-# Sina 
-# Tristan 
-# Nastaran
+# Sina abbasnia
+# Tristan Torres
+# Nastaran Zirak
 
 
 
