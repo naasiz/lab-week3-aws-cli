@@ -4,7 +4,7 @@
 KEY_NAME="bcitkey"
 PRIVATE_KEY="$KEY_NAME.pem"
 PUBLIC_KEY="$KEY_NAME.pub"
-AWS_REGION="us-east-1" # Change to your desired AWS region
+AWS_REGION="us-west-2" # Change to your desired AWS region
 PASSPHRASE=""          # Empty passphrase for the private key
 
 # Generate private key if it doesn't exist
