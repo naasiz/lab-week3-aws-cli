@@ -4,8 +4,8 @@
 KEY_NAME="bcitkey"
 PRIVATE_KEY="$KEY_NAME.pem"
 PUBLIC_KEY="$KEY_NAME.pub"
-AWS_REGION="us-west-2" # Change to your desired AWS region
-PASSPHRASE=""          # Empty passphrase for the private key
+AWS_REGION="us-west-2" 
+PASSPHRASE=""          
 
 # Generate private key if it doesn't exist
 if [ ! -f "$PRIVATE_KEY" ]; then
@@ -29,7 +29,7 @@ if [ ! -f "$PUBLIC_KEY" ]; then
   fi
 fi
 
-# Configure AWS CLI region (optional but useful for automation)
+# Configure AWS CLI region 
 aws configure set region "$AWS_REGION"
 
 # Import the public key to AWS EC2
