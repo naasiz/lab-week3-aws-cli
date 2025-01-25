@@ -41,3 +41,4 @@ if [ $? -eq 0 ]; then
 else
   echo "Failed to import key pair '$KEY_NAME'."
 fi
+
